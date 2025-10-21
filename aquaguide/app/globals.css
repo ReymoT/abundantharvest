@@ -43,6 +43,39 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+body {
+  margin: 0;
+  background-color: #3c4342;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+h1 { font-size: 2rem; margin: 0; }
+h2 { font-style: italic; font-weight: normal; }
+p { margin-top: 1.5rem; font-size: 1.1rem; }
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.button-group button {
+  background-color: #00b894;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.button-group button:hover { background-color: #019474; }
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
