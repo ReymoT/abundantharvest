@@ -43,18 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-body {
-  margin: 0;
-  background-color: #3c4342;
-  color: white;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-}
+/* Body layout is handled by Tailwind base and page components */
 h1 { font-size: 2rem; margin: 0; }
 h2 { font-style: italic; font-weight: normal; }
 p { margin-top: 1.5rem; font-size: 1.1rem; }

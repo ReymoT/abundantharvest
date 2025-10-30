@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+ 
 
 const StudentPage = () => {
   return (
@@ -95,6 +96,7 @@ const StudentPage = () => {
               </a>
             </li>
           </ul>
+
         </aside>
       </main>
     </div>
