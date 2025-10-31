@@ -1,19 +1,24 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { GraduationCap, BookOpen, Users, MoreHorizontal } from "lucide-react"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen text-center">
-      <img
-        src="..\logo.png"
-        alt="Abundant Harvest Aquaponics Logo"
-        width="600"
-      />
+    <main className="w-full">
+      <div className="mx-auto max-w-screen-md px-4 py-10 text-center">
+        <Image
+          src="/logo.png"
+          alt="Abundant Harvest Aquaponics Logo"
+          width={600}
+          height={200}
+          priority
+          className="mx-auto h-auto w-full max-w-[600px]"
+        />
       <h2>AquaGuide 🐟</h2>
       <p>Before you begin, select the option that best describes you.</p>
 
-      <div className="button-mt-6 mt-2 flex flex-wrap items-center justify-center gap-3 transition-all">
+      <div className="button-mt-6 mt-4 flex flex-wrap items-center justify-center gap-3 transition-all">
         <Link href="/student">
           <Button
             size="lg"
@@ -58,6 +63,7 @@ export default function Home() {
             Other
           </Button>
         </Link>
+      </div>
       </div>
     </main>
   );

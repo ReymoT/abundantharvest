@@ -43,7 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Styling for the homepage to be clean */
+/* body keeps the homepage styling clean */
 body {
   margin: 0;
   background-color: #3c4342;
