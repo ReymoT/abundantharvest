@@ -43,6 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Styling for the homepage to be clean */
 body {
   margin: 0;
   background-color: #3c4342;
@@ -55,6 +56,7 @@ body {
   height: 100vh;
   text-align: center;
 }
+
 h1 { font-size: 2rem; margin: 0; }
 h2 { font-style: italic; font-weight: normal; }
 p { margin-top: 1.5rem; font-size: 1.1rem; }
