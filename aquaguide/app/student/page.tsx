@@ -166,6 +166,11 @@ export default function StudentPage() {
                 Quiz
               </a>
             </li>
+            <li>
+              <a href="/faq" className="text-base hover:text-blue-900">
+                Frequently Asked Questions
+              </a>
+            </li>
           </ul>
         </aside>
       </main>
