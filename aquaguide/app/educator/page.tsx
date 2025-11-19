@@ -1,5 +1,7 @@
 "use client";
 
+import { Chatbox } from "@/components/Chatbox";
+import { ResourcesTab } from "@/components/ResourcesTab";
 import Image from "next/image";
 
 const EducatorPage = () => {
@@ -38,69 +40,11 @@ const EducatorPage = () => {
               </h2>
     
               {/* Chat Box */}
-              <div className="w-full max-w-2xl bg-gray-50 border border-gray-300 rounded-lg shadow-md p-6">
-                <div className="flex flex-col space-y-4">
-                  {/* Example Chat Messages */}
-                  <div className="self-start bg-green-700 text-white px-4 py-2 rounded-lg max-w-[80%]">
-                    Hi! My name is AquaGuide. How can I assist you?
-                  </div>
-                  <div className="self-end bg-gray-200 text-black px-4 py-2 rounded-lg max-w-[80%]">
-                    What is aquaponics?
-                  </div>
-                  <div className="self-start bg-green-700 text-white px-4 py-2 rounded-lg max-w-[80%]">
-                    Aquaponics is a sustainable system that combines aquaculture (raising fish) and hydroponics (growing plants without soil). Would you like me to share a short lesson plan or sample activity?
-                  </div>
-                  <div className="self-end bg-gray-200 text-black px-4 py-2 rounded-lg max-w-[80%]">
-                    Yes, please show me a sample activity.
-                  </div>
-                </div>
-                {/* Input Section */}
-                <div className="mt-6 flex items-center border border-gray-400 rounded-lg overflow-hidden">
-                  <textarea
-                    placeholder="Type your message..."
-                    className="flex-1 p-3 outline-none resize-none text-gray-800"
-                    rows={2}
-                  ></textarea>
-                  <button className="text-black px-6 text-xl h-full">
-                    ▶
-                  </button>
-                </div>
-              </div>
+              <Chatbox />
             </section>
     
             {/* Right side: General Resources */}
-            <aside className="w-72 border-l border-gray-300 bg-white p-8">
-              <h3 className="text-blue-700 font-bold text-xl mb-4">
-                General Resources:
-              </h3>
-              <ul className="space-y-3 text-blue-700 underline">
-                <li>
-                  <a
-                    href="https://www.youtube.com/watch?v=eHAdvcepLaY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base hover:text-blue-900"
-                  >
-                    Aquaponic Systems
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/watch?v=1q_MN4kZRlY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base hover:text-blue-900"
-                  >
-                    How to Start
-                  </a>
-                </li>
-                <li>
-                  <a href="/quiz" className="text-base hover:text-blue-900">
-                    Quiz
-                  </a>
-                </li>
-              </ul>
-            </aside>
+            <ResourcesTab />
           </main>
         </div>
       );

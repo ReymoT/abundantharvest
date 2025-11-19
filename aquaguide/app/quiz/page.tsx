@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type Evaluation = {
@@ -189,26 +191,47 @@ export default function QuizPage() {
             )}
           </fieldset>
 
-          <div className="flex items-center gap-4 pt-2">
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center gap-4">
+              <Button
+                type="submit"
+                className="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              >
+                Submit
+              </Button>
+              <Button
+                variant={"default"}
+                type="button"
+                className="cursor-pointer border border-gray-300 px-4 py-2 rounded hover:bg-gray-300"
+                onClick={() => {
+                  setMcq("");
+                  setFill("");
+                  setTruth("");
+                  setShortA("");
+                  setResults({});
+                }}
+              >
+                Reset
+              </Button>
+            </div>
+            <Link
+              href="/"
             >
-              Submit
-            </button>
-            <button
-              type="button"
-              className="border border-gray-300 px-4 py-2 rounded hover:bg-gray-50"
-              onClick={() => {
-                setMcq("");
-                setFill("");
-                setTruth("");
-                setShortA("");
-                setResults({});
-              }}
-            >
-              Reset
-            </button>
+              <Button
+                variant={"default"}
+                type="button"
+                className="cursor-pointer border border-gray-300 px-4 py-2 rounded hover:bg-gray-300"
+                onClick={() => {
+                  setMcq("");
+                  setFill("");
+                  setTruth("");
+                  setShortA("");
+                  setResults({});
+                }}
+              >
+                Home
+              </Button>
+            </Link>
           </div>
 
           {Object.keys(results).length > 0 && (
