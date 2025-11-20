@@ -38,7 +38,7 @@ export default function StudentPage() {
       {/* Main content area with sidebar */}
       <main className="flex flex-1 w-full bg-white">
         {/* Left side: Student Mode and Chat */}
-        <section className="flex-1 flex flex-col items-center justify-start py-12">
+        <section className="flex-1 flex flex-col items-center justify-center py-12">
           {/* Student Mode Heading */}
           <h2 className="text-3xl font-semibold text-gray-700 italic mb-10">
             Student Mode
