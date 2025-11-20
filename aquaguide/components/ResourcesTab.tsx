@@ -46,6 +46,14 @@ export const ResourcesTab = () => {
                 Quiz
               </Link>
             </li>
+            <li>
+              <Link
+                href="/faq"
+                className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
+              >
+                FAQ
+              </Link>
+            </li>
           </ul>
         </CardContent>
       </Card>
