@@ -3,6 +3,7 @@
 import { Chatbox } from "@/components/Chatbox";
 import { ResourcesTab } from "@/components/ResourcesTab";
 import Image from "next/image";
+import Link from "next/link";
 
 // Drop this file at: app/student/page.tsx (or wherever you want it routed)
 // This wires up the chatbox so it immediately replies with "test".
@@ -16,13 +17,15 @@ export default function StudentPage() {
       <header className="w-full bg-[#3E4645] text-white shadow-md flex items-center justify-between px-10 py-6">
         {/* Left: Logo */}
         <div className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="Abundant Harvest Aquaponics Logo"
-            width={300}
-            height={70}
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/logo2.png"
+              alt="Abundant Harvest Aquaponics Logo"
+              width={300}
+              height={70}
+              priority
+            />
+          </Link>
         </div>
 
         {/* Center: AquaGuide title */}

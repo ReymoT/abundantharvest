@@ -8,7 +8,7 @@ export default function Home() {
     <main className="w-full">
       <div className="mx-auto max-w-screen-md px-4 py-10 text-center">
         <Image
-          src="/logo.png"
+          src="/logo2.png"
           alt="Abundant Harvest Aquaponics Logo"
           width={600}
           height={200}
@@ -22,7 +22,7 @@ export default function Home() {
         <Link href="/student">
           <Button
             size="lg"
-            className="rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
+            className="hover:cursor-pointer rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
                        bg-emerald-600 text-white hover:bg-emerald-700
                        focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-600"
           >
@@ -33,7 +33,7 @@ export default function Home() {
         <Link href="/educator">
           <Button
             size="lg"
-            className="rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
+            className="hover:cursor-pointer rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
                        bg-emerald-600 text-white hover:bg-emerald-700
                        focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-600"
           >
@@ -44,7 +44,7 @@ export default function Home() {
         <Link href="/parent">
           <Button
             size="lg"
-            className="rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
+            className="hover:cursor-pointer rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
                        bg-emerald-600 text-white hover:bg-emerald-700
                        focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-600"
           >
@@ -55,7 +55,7 @@ export default function Home() {
         <Link href="/other">
           <Button
             size="lg"
-            className="rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
+            className="hover:cursor-pointer rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
                        bg-emerald-600 text-white hover:bg-emerald-700
                        focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-600"
           >
