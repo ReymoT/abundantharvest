@@ -18,7 +18,7 @@ const Accordion = ({ items }: { items: AccordionItem[] }) => {
             className="w-full text-left px-4 py-3 bg-gray-100 hover:bg-gray-200 flex items-center justify-between"
           >
             <span className="font-medium text-gray-800">{item.title}</span>
-            <span className="ml-2">{openIndex === idx ? "−" : "+"}</span>
+            <span className="ml-2 text-black">{openIndex === idx ? "−" : "+"}</span>
           </button>
           {openIndex === idx && (
             <div className="px-4 py-3 bg-white text-gray-700">{item.content}</div>
