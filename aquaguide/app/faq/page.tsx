@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { ResourcesTab } from "@/components/ResourcesTab";
 
 type AccordionItem = { title: string; content: React.ReactNode };
 
@@ -138,43 +139,7 @@ const FAQ = () => {
         </section>
 
         {/* Right side: General Resources */}
-        <aside className="w-72 border-l border-gray-300 bg-white p-8">
-          <h3 className="text-blue-700 font-bold text-xl mb-4">
-            General Resources:
-          </h3>
-          <ul className="space-y-3 text-blue-700 underline">
-            <li>
-              <a
-                href="https://www.youtube.com/watch?v=eHAdvcepLaY"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base hover:text-blue-900"
-              >
-                Aquaponic Systems
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/watch?v=1q_MN4kZRlY"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base hover:text-blue-900"
-              >
-                How to Start
-              </a>
-            </li>
-            <li>
-              <a href="/quiz" className="text-base hover:text-blue-900">
-                Quiz
-              </a>
-            </li>
-            <li>
-              <a href="/faq" className="text-base hover:text-blue-900">
-                Frequently Asked Questions
-              </a>
-            </li>
-          </ul>
-        </aside>
+        <ResourcesTab />
       </main>
     </div>
   )
