@@ -52,7 +52,7 @@ export default function Home() {
             Parent
           </Button>
         </Link>
-        <Link href="/other">
+        <Link href="/faq">
           <Button
             size="lg"
             className="hover:cursor-pointer rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5
@@ -60,7 +60,7 @@ export default function Home() {
                        focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-600"
           >
             <MoreHorizontal className="mr-2 h-4 w-4" />
-            Other
+            FAQ
           </Button>
         </Link>
       </div>

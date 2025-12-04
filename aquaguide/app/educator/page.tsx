@@ -47,7 +47,7 @@ const EducatorPage = () => {
             </section>
     
             {/* Right side: General Resources */}
-            <ResourcesTab />
+            <ResourcesTab showQuiz={false}/>
           </main>
         </div>
       );

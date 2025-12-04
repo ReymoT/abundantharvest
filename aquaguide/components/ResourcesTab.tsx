@@ -2,7 +2,11 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
-export const ResourcesTab = () => {
+type ResourcesTabProps = {
+  showQuiz?: boolean;
+};
+
+export const ResourcesTab = ({showQuiz = true}: ResourcesTabProps) => {
   return (
     <aside className="w-72 border-l bg-white p-6">
       <Card className="border-none shadow-sm">
@@ -38,12 +42,22 @@ export const ResourcesTab = () => {
               </a>
             </li>
 
+          {showQuiz && (
             <li>
               <Link
                 href="/quiz"
                 className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
               >
                 Quiz
+              </Link>
+            </li>
+          )}
+            <li>
+              <Link
+                href="/faq"
+                className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
+              >
+                FAQ
               </Link>
             </li>
           </ul>
