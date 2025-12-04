@@ -22,20 +22,49 @@ export const Chatbox = () => {
         });
       }, [messages]);
     
-      function send(text: string) {
+      async function send(text: string) {
         if (!text.trim()) return;
-    
-        const id = (typeof crypto !== "undefined" && crypto.randomUUID)
-          ? crypto.randomUUID()
-          : String(Date.now());
-    
-        const userMsg: Msg = { id, role: "user", text: text.trim() };
+
+        const id = typeof crypto !== "undefined" && crypto.randomUUID
+            ? crypto.randomUUID()
+            : String(Date.now());
+
+        const cleanText = text.trim();
+
+        const userMsg: Msg = { id, role: "user", text: cleanText };
         setMessages((prev) => [...prev, userMsg]);
-    
-        // dummy reply
-        const botMsg: Msg = { id: id + "-bot", role: "bot", text: "test" };
-        setTimeout(() => setMessages((prev) => [...prev, botMsg]), 120);
-      }
+
+        try {
+          const res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ prompt: cleanText }),
+          });
+
+          if (!res.ok) {
+            throw new Error(`HTTP error ${res.status}`);
+          }
+
+          const data = await res.json();
+
+          const botMsg: Msg = {
+            id: id + "-bot",
+            role: "bot",
+            text: data.text ?? "Sorry, I couldn’t generate a reply.",
+          };
+
+          setMessages((prev) => [...prev, botMsg]);
+        } catch (err) {
+          console.error(err);
+          const botMsg: Msg = {
+            id: id + "-bot",
+            role: "bot",
+            text: "Something went wrong talking to Gemini.",
+          };
+          setMessages((prev) => [...prev, botMsg]);
+        }
+}
+
     return (
         <div className="w-full max-w-2xl bg-gray-50 border border-gray-300 rounded-lg shadow-md p-6">
         {/* Messages */}
