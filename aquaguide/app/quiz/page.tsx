@@ -8,6 +8,7 @@ type Evaluation = {
   correct: boolean;
   message: string;
   correctAnswer?: string;
+  explanation?: string; 
 };
 
 export default function QuizPage() {
@@ -32,6 +33,17 @@ export default function QuizPage() {
     []
   );
 
+  const explanations = useMemo(
+  () => ({
+    mcq: "Aquaponics = aquaculture (fish) + hydroponics (plants) + beneficial bacteria that convert fish waste into plant nutrients.",
+    fill: "Fish waste breaks down into ammonia, which is toxic to fish in high amounts, so it needs to be processed/filtered by bacteria.",
+    truth: "Nitrosomonas bacteria convert ammonia → nitrite first. Nitrobacter comes after and converts nitrite → nitrate.",
+    shortA: "Nitrate is the final product of nitrification and is the main form of nitrogen plants absorb as a nutrient.",
+  }),
+  []
+);
+
+
   function normalize(value: string): string {
     return value.trim().toLowerCase();
   }
@@ -40,32 +52,30 @@ export default function QuizPage() {
     e.preventDefault();
     const mcqEval: Evaluation =
       normalize(mcq) === normalize(correct.mcq)
-        ? { correct: true, message: "Correct!" }
+        ? { correct: true, message: "Correct!" , explanation: explanations.mcq}
         : {
             correct: false,
             message: "Incorrect.",
             correctAnswer: "B) Aquaculture, Hydroponics, and Bacterial Filtration",
+            explanation: explanations.mcq,
           };
 
-    const fillEval: Evaluation =
-      normalize(fill) === correct.fill
-        ? { correct: true, message: "Correct!" }
-        : { correct: false, message: "Incorrect.", correctAnswer: "Ammonia" };
+    const fillEval: Evaluation = normalize(fill) === correct.fill
+      ? { correct: true, message: "Correct!", explanation: explanations.fill }
+      : { correct: false, message: "Incorrect.", correctAnswer: "Ammonia", explanation: explanations.fill };
 
-    const truthEval: Evaluation =
-      normalize(truth) === correct.truth
-        ? { correct: true, message: "Correct!" }
-        : {
-            correct: false,
-            message: "Incorrect.",
-            correctAnswer:
-              "False (The first step is Nitrosomonas converting ammonia to nitrite.)",
-          };
+    const truthEval: Evaluation = normalize(truth) === correct.truth
+      ? { correct: true, message: "Correct!", explanation: explanations.truth }
+      : {
+        correct: false,
+        message: "Incorrect.",
+        correctAnswer: "False (The first step is Nitrosomonas converting ammonia to nitrite.)",
+        explanation: explanations.truth,
+        };
 
-    const shortEval: Evaluation =
-      normalize(shortA) === correct.shortA
-        ? { correct: true, message: "Correct!" }
-        : { correct: false, message: "Incorrect.", correctAnswer: "Nitrate" };
+    const shortEval: Evaluation = normalize(shortA) === correct.shortA
+      ? { correct: true, message: "Correct!", explanation: explanations.shortA }
+      : { correct: false, message: "Incorrect.", correctAnswer: "Nitrate", explanation: explanations.shortA };
 
     setResults({ mcq: mcqEval, fill: fillEval, truth: truthEval, shortA: shortEval });
   }
@@ -107,14 +117,33 @@ export default function QuizPage() {
                 </label>
               ))}
             </div>
+            
             {results.mcq && (
-              <p className={results.mcq.correct ? "text-green-700" : "text-red-700"}>
-                {results.mcq.message}
+              <div
+                className={`mt-3 rounded border p-3 ${
+                  results.mcq.correct
+                    ? "border-green-200 bg-green-50"
+                    : "border-red-200 bg-red-50"
+                }`}
+              >
+                <p className="font-semibold">{results.mcq.message}</p>
+
                 {!results.mcq.correct && results.mcq.correctAnswer ? (
-                  <span className="block">Correct answer: {results.mcq.correctAnswer}</span>
+                  <p className="mt-1 text-sm">
+                    <span className="font-semibold">Correct answer:</span>{" "}
+                    {results.mcq.correctAnswer}
+                  </p>
                 ) : null}
-              </p>
+
+                {results.mcq.explanation ? (
+                  <p className="mt-1 text-sm text-gray-700">
+                    <span className="font-semibold">Explanation:</span>{" "}
+                    {results.mcq.explanation}
+                  </p>
+                ) : null}
+              </div>
             )}
+
           </fieldset>
 
           <fieldset className="space-y-3">
@@ -129,12 +158,29 @@ export default function QuizPage() {
               onChange={(e) => setFill(e.target.value)}
             />
             {results.fill && (
-              <p className={results.fill.correct ? "text-green-700" : "text-red-700"}>
-                {results.fill.message}
+              <div
+                className={`mt-3 rounded border p-3 ${
+                  results.fill.correct
+                    ? "border-green-200 bg-green-50"
+                    : "border-red-200 bg-red-50"
+                }`}
+              >
+                <p className="font-semibold">{results.fill.message}</p>
+
                 {!results.fill.correct && results.fill.correctAnswer ? (
-                  <span className="block">Correct answer: {results.fill.correctAnswer}</span>
+                  <p className="mt-1 text-sm">
+                    <span className="font-semibold">Correct answer:</span>{" "}
+                    {results.fill.correctAnswer}
+                  </p>
                 ) : null}
-              </p>
+
+                {results.fill.explanation ? (
+                  <p className="mt-1 text-sm text-gray-700">
+                    <span className="font-semibold">Explanation:</span>{" "}
+                    {results.fill.explanation}
+                  </p>
+                ) : null}
+              </div>
             )}
           </fieldset>
 
@@ -160,14 +206,31 @@ export default function QuizPage() {
                 </label>
               ))}
             </div>
-            {results.truth && (
-              <p className={results.truth.correct ? "text-green-700" : "text-red-700"}>
-                {results.truth.message}
-                {!results.truth.correct && results.truth.correctAnswer ? (
-                  <span className="block">Correct answer: {results.truth.correctAnswer}</span>
-                ) : null}
-              </p>
-            )}
+          {results.truth && (
+            <div
+              className={`mt-3 rounded border p-3 ${
+                results.truth.correct
+                  ? "border-green-200 bg-green-50"
+                  : "border-red-200 bg-red-50"
+              }`}
+            >
+              <p className="font-semibold">{results.truth.message}</p>
+
+              {!results.truth.correct && results.truth.correctAnswer ? (
+                <p className="mt-1 text-sm">
+                  <span className="font-semibold">Correct answer:</span>{" "}
+                  {results.truth.correctAnswer}
+                </p>
+              ) : null}
+
+              {results.truth.explanation ? (
+                <p className="mt-1 text-sm text-gray-700">
+                  <span className="font-semibold">Explanation:</span>{" "}
+                  {results.truth.explanation}
+                </p>
+              ) : null}
+            </div>
+          )}
           </fieldset>
 
           <fieldset className="space-y-3">
@@ -182,12 +245,29 @@ export default function QuizPage() {
               onChange={(e) => setShortA(e.target.value)}
             />
             {results.shortA && (
-              <p className={results.shortA.correct ? "text-green-700" : "text-red-700"}>
-                {results.shortA.message}
+              <div
+                className={`mt-3 rounded border p-3 ${
+                  results.shortA.correct
+                    ? "border-green-200 bg-green-50"
+                    : "border-red-200 bg-red-50"
+                }`}
+              >
+                <p className="font-semibold">{results.shortA.message}</p>
+
                 {!results.shortA.correct && results.shortA.correctAnswer ? (
-                  <span className="block">Correct answer: {results.shortA.correctAnswer}</span>
+                  <p className="mt-1 text-sm">
+                    <span className="font-semibold">Correct answer:</span>{" "}
+                    {results.shortA.correctAnswer}
+                  </p>
                 ) : null}
-              </p>
+
+                {results.shortA.explanation ? (
+                  <p className="mt-1 text-sm text-gray-700">
+                    <span className="font-semibold">Explanation:</span>{" "}
+                    {results.shortA.explanation}
+                  </p>
+                ) : null}
+              </div>
             )}
           </fieldset>
 
