@@ -82,7 +82,17 @@ export const Chatbox = () => {
                     " px-4 py-2 rounded-lg max-w-[80%] shadow"
                     }
                 >
-                    {m.text}
+                    <div
+                      key={m.id}
+                      className={
+                        (m.role === "bot"
+                        ? "self-start bg-green-700 text-white"
+                        : "self-end bg-gray-200 text-black") +
+                        " px-4 py-2 rounded-lg max-w-[80%] shadow whitespace-pre-wrap"
+                      }
+                    >
+                      {m.text}
+                    </div>
                 </div>
                 ))}
             </div>
