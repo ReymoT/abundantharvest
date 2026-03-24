@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { MemoryGame } from "@/components/MemoryGame";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
@@ -93,6 +94,9 @@ export default function QuizPage() {
     <div className="min-h-screen w-full bg-white text-gray-900">
       <main className="max-w-3xl mx-auto px-6 py-10">
         <h1 className="text-3xl font-bold mb-6">Quiz</h1>
+        <p className="mb-6 text-sm text-gray-600">
+          Practice with the written quiz below, then try the Memory Card Matching Game.
+        </p>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           <fieldset className="space-y-3">
@@ -320,6 +324,10 @@ export default function QuizPage() {
             </p>
           )}
         </form>
+
+        <section id="memory-game" className="mt-12">
+          <MemoryGame />
+        </section>
       </main>
     </div>
   );

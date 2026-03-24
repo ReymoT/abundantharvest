@@ -43,14 +43,24 @@ export const ResourcesTab = ({showQuiz = true}: ResourcesTabProps) => {
             </li>
 
           {showQuiz && (
-            <li>
-              <Link
-                href="/quiz"
-                className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
-              >
-                Quiz
-              </Link>
-            </li>
+            <>
+              <li>
+                <Link
+                  href="/quiz"
+                  className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
+                >
+                  Quiz
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/student"
+                  className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
+                >
+                  Memory Match Game
+                </Link>
+              </li>
+            </>
           )}
             <li>
               <Link
