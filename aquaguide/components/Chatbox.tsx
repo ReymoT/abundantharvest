@@ -3,7 +3,13 @@ import { ArrowUpIcon } from "lucide-react";
 
 type Msg = { id: string; role: "user" | "bot"; text: string };
 
-export const Chatbox = () => {
+type Audience = "student" | "parent" | "educator";
+
+type Properties = {
+  audience: Audience;
+};
+
+export const Chatbox = ({ audience }: Properties) => {
     const [messages, setMessages] = useState<Msg[]>([
         {
           id: "welcome",
@@ -38,7 +44,7 @@ export const Chatbox = () => {
           const res = await fetch("/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ prompt: cleanText }),
+            body: JSON.stringify({ prompt: cleanText, audience }),
           });
 
           if (!res.ok) {

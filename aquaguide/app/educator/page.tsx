@@ -43,7 +43,7 @@ const EducatorPage = () => {
               </h2>
     
               {/* Chat Box */}
-              <Chatbox />
+              <Chatbox audience="educator" />
             </section>
     
             {/* Right side: General Resources */}

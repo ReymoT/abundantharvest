@@ -49,7 +49,7 @@ export default function StudentPage() {
           </h2>
 
           {/* Chat Box */}
-          <Chatbox />
+          <Chatbox audience="student" />
 
           <div className="mt-10 w-full max-w-4xl">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3">

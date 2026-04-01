@@ -43,7 +43,7 @@ const ParentPage = () => {
                   </h2>
         
                   {/* Chat Box */}
-                  <Chatbox />
+                  <Chatbox audience="parent" />
                 </section>
         
                 {/* Right side: General Resources */}
