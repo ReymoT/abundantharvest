@@ -10,7 +10,6 @@ type ResourcesTabProps = {
 
 export const ResourcesTab = ({showQuiz = true, showLessonPlanGenerator = false}: ResourcesTabProps) => {
   const [videoUrl, setVideoUrl] = useState("https://www.youtube.com/embed/nPXuEpyCfMg");
-  const [videoUrlSpanish, setVideoUrlSpanish] = useState("https://www.youtube.com/embed/qOetKy_HRuo");
   return (
     <aside className="w-72 border-l bg-white p-6">
       <Card className="border-none shadow-sm">
@@ -114,27 +113,6 @@ export const ResourcesTab = ({showQuiz = true, showLessonPlanGenerator = false}:
               {videoUrl && (
                 <iframe id="vidFrame"
                 src={videoUrl}
-                allowFullScreen
-                width={200}
-                // height={50}
-              />)}
-            </li>
-            <li className="flex flex-col items-start space-y-2 text-left">
-              <a className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium" href="https://www.youtube.com/watch?v=nPXuEpyCfMg&list=PLiauylj3wIVvEpCBPGWDeFXibpSibF-a7">Clic abajo para seleccionar un video</a>
-              <select onChange={(e) => setVideoUrlSpanish(e.target.value)} className="w-full bg-black text-white text-sm">
-                <option value="https://www.youtube.com/embed/qOetKy_HRuo">Sistema de Acuaponía</option>
-                <option value="https://www.youtube.com/embed/-Qshtdgc5V4">Aquaponía: Como tener pece...</option>
-                <option value="https://www.youtube.com/embed/9xD35lh-4jQ">Aquaponía: cultivo de verd...</option>
-                <option value="https://www.youtube.com/embed/HbtF2kNYap0">Cómo funciona la acuaponía...</option>
-                <option value="https://www.youtube.com/embed/OSNIiX0FyhI">Acuaponia en casa - Sistem...</option>
-                <option value="https://www.youtube.com/embed/QQFzYxzg6tM">Descripcion general del si...</option>
-                <option value="https://www.youtube.com/embed/psbmLGfEz2c">Reportaje Acuiponia</option>
-                <option value="https://www.youtube.com/embed/0boVYvJKkoQ">Acuaponía | Simbiosis perf...</option>
-                <option value="https://www.youtube.com/embed/0w8DwoiqnqM">Grow fish and vegetables a...</option>
-              </select>
-              {videoUrlSpanish && (
-                <iframe id="vidFrameSpanish"
-                src={videoUrlSpanish}
                 allowFullScreen
                 width={200}
                 // height={50}
