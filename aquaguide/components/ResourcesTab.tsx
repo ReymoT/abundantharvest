@@ -5,9 +5,10 @@ import Link from "next/link";
 
 type ResourcesTabProps = {
   showQuiz?: boolean;
+  showLessonPlanGenerator?: boolean;
 };
 
-export const ResourcesTab = ({showQuiz = true}: ResourcesTabProps) => {
+export const ResourcesTab = ({showQuiz = true, showLessonPlanGenerator = false}: ResourcesTabProps) => {
   const [videoUrl, setVideoUrl] = useState("https://www.youtube.com/embed/nPXuEpyCfMg");
   const [videoUrlSpanish, setVideoUrlSpanish] = useState("https://www.youtube.com/embed/qOetKy_HRuo");
   return (
@@ -62,6 +63,31 @@ export const ResourcesTab = ({showQuiz = true}: ResourcesTabProps) => {
                 >
                   Memory Match Game
                 </Link>
+              </li>
+            </>
+          )}
+
+          {showLessonPlanGenerator && (
+            <>
+              <li>
+                  <Link
+                    href="/educator/lesson-plan"
+                    target="_blank"
+                    className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
+                  >
+                    AI Lesson Plan Generator
+                    <ExternalLink className="h-4 w-4 ml-1 opacity-70" />
+                  </Link>
+              </li>
+              <li>
+                  <Link
+                    href="/educator/resources"
+                    target="_blank"
+                    className="flex items-center text-white hover:text-gray-500 transition-colors text-sm font-medium"
+                  >
+                    Teaching Resources Hub
+                    <ExternalLink className="h-4 w-4 ml-1 opacity-70" />
+                  </Link>
               </li>
             </>
           )}

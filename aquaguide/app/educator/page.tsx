@@ -1,5 +1,6 @@
 "use client";
 
+// Update 1: Add import
 import { Chatbox } from "@/components/Chatbox";
 import { ResourcesTab } from "@/components/ResourcesTab";
 import Image from "next/image";
@@ -34,10 +35,10 @@ const EducatorPage = () => {
           </header>
     
           {/* Main content area with sidebar */}
-          <main className="flex flex-1 w-full bg-white">
-            {/* Left side: Student Mode and Chat */}
-            <section className="flex-1 flex flex-col items-center justify-center py-12">
-              {/* Student Mode Heading */}
+          <main className="flex flex-1 w-full bg-white h-[calc(100vh-118px)] overflow-hidden">
+            {/* Left side: Content Area */}
+            <section className="flex-1 flex flex-col items-center justify-start py-12 px-8 overflow-y-auto w-full">
+              {/* Educator Mode Heading */}
               <h2 className="text-3xl font-semibold text-gray-700 italic mb-10">
                 Educator Mode
               </h2>
@@ -47,7 +48,9 @@ const EducatorPage = () => {
             </section>
     
             {/* Right side: General Resources */}
-            <ResourcesTab showQuiz={false}/>
+            <div className="overflow-y-auto">
+              <ResourcesTab showQuiz={false} showLessonPlanGenerator={true} />
+            </div>
           </main>
         </div>
       );
