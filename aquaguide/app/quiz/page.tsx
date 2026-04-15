@@ -240,7 +240,7 @@ export default function QuizPage() {
           <fieldset className="space-y-3">
             <legend className="font-medium">Short Answer</legend>
             <label className="block">
-              What is the final substance produced by the bacteria that flows into the plant trays to serve as "food for the plants"?
+              {'What is the final substance produced by the bacteria that flows into the plant trays to serve as "food for the plants"?'}
             </label>
             <input
               type="text"

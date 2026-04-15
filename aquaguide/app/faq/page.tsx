@@ -78,16 +78,16 @@ const FAQ = () => {
                     <p>There are so many benefits:</p>
                     <ul className="list-disc ml-6 space-y-1 text-gray-700">
                       <li>You can have home fish farming!</li>
-                      <li>You'll use 90% less water compared to soil-based gardening.</li>
-                      <li>You'll have a higher yield — about 2x soil-based gardening.</li>
-                      <li>You won't have weeds or watering/fertilizing concerns; the system largely maintains itself.</li>
+                      <li>You&apos;ll use 90% less water compared to soil-based gardening.</li>
+                      <li>You&apos;ll have a higher yield — about 2x soil-based gardening.</li>
+                      <li>You won&apos;t have weeds or watering/fertilizing concerns; the system largely maintains itself.</li>
                     </ul>
                   </div>
                 ),
               },
               {
                 title: "What fish can I raise in an aquaponics system?",
-                content: (<div><p>You can raise any freshwater fish that you'd like! Just make sure you do your research and your system can maintain the proper environment for raising them. For starters, we recommend tilapia, trout, and catfish!</p><a href="https://gogreenaquaponics.com/blogs/news/what-are-the-best-fish-for-aquaponics?srsltid=AfmBOoqijr0Jmb61m0HDsa1jRNJZtZe71t155xUqa1MSSGmSr50p3T1k" className="text-base hover:text-blue-900">Click here for a good guide to what fish to raise!</a></div>),
+                content: (<div><p>You can raise any freshwater fish that you&apos;d like! Just make sure you do your research and your system can maintain the proper environment for raising them. For starters, we recommend tilapia, trout, and catfish!</p><a href="https://gogreenaquaponics.com/blogs/news/what-are-the-best-fish-for-aquaponics?srsltid=AfmBOoqijr0Jmb61m0HDsa1jRNJZtZe71t155xUqa1MSSGmSr50p3T1k" className="text-base hover:text-blue-900">Click here for a good guide to what fish to raise!</a></div>),
               },
               {
                 title: "What plants can I grow in aquaponics?",
@@ -95,7 +95,7 @@ const FAQ = () => {
               },
               {
                 title: "Do I need a greenhouse for aquaponics?",
-                content: (<p>Nope, you just need a tank for everything and it can be placed indoors or outdoors! A greenhouse is nice for extra protection against the weather and gives you more freedom for year-round growing if you'd like.</p>),
+                content: (<p>Nope, you just need a tank for everything and it can be placed indoors or outdoors! A greenhouse is nice for extra protection against the weather and gives you more freedom for year-round growing if you&apos;d like.</p>),
               },
               {
                 title: "How do I start a small system?",
@@ -103,7 +103,7 @@ const FAQ = () => {
               },
               {
                 title: "How does aquaponics compare to traditional farming?",
-                content: (<p>"Aquaponic systems use up to 90% less water than conventional farming, require no chemical fertilizers or pesticides, and can produce both plants and protein (fish) in the same system. They also allow for year-round growing regardless of climate and typically yield crops faster than soil-based methods."
+                content: (<p>&quot;Aquaponic systems use up to 90% less water than conventional farming, require no chemical fertilizers or pesticides, and can produce both plants and protein (fish) in the same system. They also allow for year-round growing regardless of climate and typically yield crops faster than soil-based methods.&quot;
                     source: https://futurefreshfarms.com/faqs/
                 </p>),
               },
